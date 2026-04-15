@@ -927,3 +927,145 @@ main {
     margin-left: 260px; 
     width: calc(100% - 260px);
 }
+
+
+
+@media (max-width: 768px) {
+    /* --- พื้นฐานสำหรับมือถือ --- */
+    html, body {
+        min-height: 100vh;
+        margin: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* --- โหมดสว่าง (Default) --- */
+    body {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important; /* ตัวหนังสือสีเข้ม */
+    }
+
+    aside#side-menu {
+        background-color: #1d899c !important; /* พื้นหลังเมนูสีเทาอ่อน */
+        position: fixed !important;
+        left: -280px !important;
+        width: 260px !important;
+        height: 100vh !important;
+        z-index: 9999;
+        transition: left 0.4s ease;
+    }
+
+    /* สีตัวหนังสือในเมนูตอนโหมดสว่าง */
+    aside#side-menu ul li a, 
+    aside#side-menu h2 {
+        color: #1a1a1a !important;
+    }
+
+    /* --- โหมดมืด (เมื่อมีคลาส .dark-mode) --- */
+    body.dark-mode {
+        background-color: #15172a !important; /* */
+        color: #ffffff !important;
+    }
+
+    body.dark-mode aside#side-menu {
+        background-color: #15172a !important; /* */
+    }
+
+    /* สีตัวหนังสือในเมนูตอนโหมดมืด */
+    body.dark-mode aside#side-menu ul li a,
+    body.dark-mode aside#side-menu h2 {
+        color: #ffffff !important;
+    }
+
+    /* --- สถานะเมื่อเปิดเมนู --- */
+    aside#side-menu.active {
+        left: 0 !important;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+
+/* เมื่อ body "ไม่มี" คลาส dark-mode (คือโหมดสว่าง) */
+    body:not(.dark-mode) #menu-toggle {
+        color: #000000 !important; /* เปลี่ยนเป็นสีดำ */
+    }
+
+    /* เมื่อ body "มี" คลาส dark-mode (คือโหมดมืด) */
+    body.dark-mode #menu-toggle {
+        color: #ffffff !important; /* เปลี่ยนกลับเป็นสีขาว */
+    }
+
+    /* --- เนื้อหาหลัก --- */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        background-color: transparent !important;
+        padding-top: 70px !important;
+    }
+}
+
+
+
+
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 2000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 1%;
+    object-fit: cover; /* ตัดส่วนเกินออกเพื่อให้รูปคงสัดส่วนเดิมไว้ในวงกลม */
+    border: 2px solid #fff; /* เพิ่มขอบสีขาวให้ดูเด่นขึ้น (ถ้าต้องการ) */
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}

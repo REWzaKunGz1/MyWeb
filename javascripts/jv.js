@@ -1,17 +1,37 @@
+
+
 function myFunction() {
     document.getElementById("demo").innerHTML = "Paragraph changed.";
 }
 
-const menuToggle = document.getElementById('menu-toggle');
+const menuBtn = document.getElementById('menu-toggle');
 const sideMenu = document.getElementById('side-menu');
 
-menuToggle.addEventListener('click', () => {
-    // สั่งให้ aside สไลด์เข้า-ออก
-    sideMenu.classList.toggle('hidden');
+menuBtn.onclick = function(e) {
+    e.stopPropagation();
+    
+    // ตรวจสอบขนาดจอ ณ ตอนที่กด
+    if (window.innerWidth <= 768) {
+        // --- โหมดมือถือ ---
+        sideMenu.classList.toggle('active'); // ใช้ active เพื่อสไลด์ทับ
+        sideMenu.classList.remove('hidden'); // กันคลาสคอมมาแทรก
+        document.body.classList.remove('menu-closed');
+    } else {
+        // --- โหมดคอม ---
+        sideMenu.classList.toggle('hidden'); // ใช้ hidden เพื่อหดเมนู
+        document.body.classList.toggle('menu-closed'); // ขยับ main ตาม
+        sideMenu.classList.remove('active');
+    }
+};
 
-    // สั่งให้เนื้อหาหลัก (main) ขยับตาม
-    document.body.classList.toggle('menu-closed');
+// คลิกข้างนอกเมนูให้ปิด (เฉพาะมือถือ)
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768 && !sideMenu.contains(e.target) && e.target !== menuBtn) {
+        sideMenu.classList.remove('active');
+    }
 });
+
+
 
 if (localStorage.getItem('isLoggedIn') !== 'true') {
     window.location.href = 'menu/login.html';
