@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID-STRIDER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* เพิ่มเอฟเฟกต์จอ CRT */
+    body {
+        background: #001100;
+        color: #0f0;
+        font-family: 'Courier New', monospace;
+        padding: 50px;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* เส้น Scanline ประชดมิติ 2026 */
+    body::before {
+        content: " ";
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+            linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-size: 100% 4px, 3px 100%;
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .typewriter h1 {
+        color: #fff;
+        text-shadow: 0 0 10px #0f0;
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    /* ปุ่มกลับแบบคลาสสิก */
+    .back-btn {
+        color: #0f0;
+        text-decoration: none;
+        border: 1px solid #0f0;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .back-btn:hover {
+        background: #0f0;
+        color: #000;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
+
+    .aside {
+        background: #002200;
+        padding: 20px;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .aside .logo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .aside h1 {
+        color: #0f0;
+        margin-top: 20px;
+    }
+
+    .aside a {
+        color: #0f0;
+        text-decoration: none;
+        display: block;
+        margin-top: 10px;
+    }
+
+    aside a:hover {
+        text-decoration: underline;
+    }
+
+    main {
+        margin-left: 270px;
+        padding: 20px;
+    }
+</style>
+
+<body>
+
+    <aside>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKNZVac_1U-U1Hg0TtjOLkWplsoKgvtIYrNg&s"
+                alt="โลโก้">
+        </div>
+        <h1>เมนู</h1>
+        <a href="above.html" class="back-btn">> RETURN_TEAM</a><br>
+        <a href="../index.html" class="back-btn">> RETURN_HOME</a>
+    </aside>
+
+    <main>
+        <div class="typewriter">
+            <h1>SOMCHAI: THE GOD OF Web Development</h1>
+            <p>สมชายเป็นเทพเจ้าแห่งการพัฒนาเว็บที่มีพลังอำนาจในการสร้างเว็บไซต์ที่น่าทึ่งและประสบความสำเร็จอย่างมากในโลกออนไลน์
+                ด้วยความสามารถในการเขียนโค้ดที่ยอดเยี่ยมและความคิดสร้างสรรค์ที่ไม่มีที่สิ้นสุด
+                สมชายได้สร้างเว็บไซต์ที่ไม่เพียงแต่สวยงาม
+                แต่ยังใช้งานง่ายและมีประสิทธิภาพสูง ทำให้เขาได้รับการยกย่องเป็นเทพเจ้าแห่งการพัฒนาเว็บในวงการเทคโนโลยี
+            </p>
+
+            <p>สมชายมีความสามารถในการใช้เทคโนโลยีต่าง ๆ เช่น HTML, CSS, JavaScript และ Frameworks ต่าง ๆ
+                เพื่อสร้างเว็บไซต์ที่ตอบสนองความต้องการของผู้ใช้งาน
+                เขายังมีความเชี่ยวชาญในการออกแบบ UI/UX
+                ที่ทำให้ผู้ใช้งานรู้สึกสะดวกสบายและประทับใจเมื่อเข้าชมเว็บไซต์ของเขา</p>
+
+            <p>นอกจากนี้ สมชายยังเป็นที่ปรึกษาและผู้สอนที่ยอดเยี่ยมในวงการพัฒนาเว็บ
+                เขามักจะให้คำแนะนำและแบ่งปันความรู้กับนักพัฒนารุ่นใหม่
+                เพื่อช่วยให้พวกเขาเติบโตและประสบความสำเร็จในสายงานนี้</p>
+        </div>
+    </main>
+
+</body>
+
+</html>

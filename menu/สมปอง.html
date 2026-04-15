@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NULL-POINTER - Above Team</title>
+    <style>
+        /* 1. พื้นฐาน Matrix */
+        body {
+            background: #000;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* ใช้ Flex เพื่อช่วยจัดตำแหน่ง */
+        }
+
+        /* 2. Aside Menu - ล็อคไว้ซ้ายมือ */
+        aside {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100vh;
+            background: rgba(0, 40, 0, 0.9);
+            /* เขียวมืดๆ */
+            padding: 20px;
+            border-right: 1px solid #00ff41;
+            z-index: 1000;
+        }
+
+        /* 3. คอนเทนต์หลัก - ดันขวาหนี Aside */
+        .main-content {
+            margin-left: 240px;
+            /* ดันขวาพ้น Aside (200px + padding) */
+            padding: 40px;
+            width: 100%;
+        }
+
+        .data-stream {
+            font-size: 12px;
+            opacity: 0.5;
+            height: 50px;
+            overflow: hidden;
+            border-bottom: 1px dashed #00ff41;
+            margin-bottom: 20px;
+        }
+
+        .profile {
+            border: 1px solid #00ff41;
+            padding: 30px;
+            background: rgba(0, 255, 65, 0.05);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: #00ff41;
+            color: #000;
+            display: inline-block;
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            border: 1px solid #00ff41;
+            color: #00ff41;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 15px #00ff41;
+        }
+
+        .logo img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            color: #00ff41;
+            text-decoration: none;
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com" alt="โลโก้">
+        </div>
+        <h2 style="font-size: 1.2rem;">TERMINAL MENU</h2>
+        <hr style="border-color: #00ff41;">
+        <a href="above.html" class="back-btn">> RETURN_TEAM</a>
+        <a href="../index.html" class="back-btn">> RETURN_HOME</a>
+    </aside>
+
+    <!-- ครอบคอนเทนต์ทั้งหมดด้วยคลาสนี้สัส! -->
+    <div class="main-content">
+        <div class="data-stream">
+            [SYS_LOG]: 010110100101... Simulating Black Hole Data... Initializing 3100 Lines of Python...
+            E85_COMBUSTION_DETECTED... wvgvJv_SYNC_SUCCESSFUL...
+        </div>
+
+        <div class="profile">
+            <h1>NULL-POINTER</h1>
+            <p>> Age: 35</p>
+            <p>> Occupation: Alien Hunter & Tech Specialist</p>
+            <p>> Location: Samut Prakan, Thailand</p>
+            <p>> Skills: Advanced Holographic Mapping, Interstellar Communication, Quantum Mechanics</p>
+            <p>> Bio: Sompong is a seasoned alien hunter with over a decade of experience tracking extraterrestrial 
+            beings across the galaxy. Known for his sharp intellect and resourcefulness, he has successfully
+            ocated and communicated with several alien species. Currently, he is on a mission to find an alien named "Somchai" who is believed to be hiding in Samut Prakan.</p>
+            <p>> Current Mission: Finding Alien "VOID-STRIDER" in Samut Prakan...</p>
+            <p>> System Status: <span style="color: #fff; background: red; padding: 2px 5px;">OVERHEAT 134°C</span></p>
+            <br>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!-- สมหญิง.html -->
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>สมหญิง - Above Team</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #050010;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .aurora-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f43f5e, #38bdf8, #818cf8);
+            filter: blur(100px);
+            opacity: 0.2;
+            z-index: -1;
+            animation: move 10s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
+        }
+
+        .card-somying {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-shadow: 0 0 50px rgba(244, 63, 94, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 20px #f43f5e;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #f43f5e;
+        }
+
+        .back {
+            color: #f43f5e;
+            text-decoration: none;
+            margin-top: 20px;
+            display: block;
+        }
+
+        aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.aside .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aside .logo img {
+    width: 100px;
+    height: auto;
+}
+
+.aside h1 { 
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <aside>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKNZVac_1U-U1Hg0TtjOLkWplsoKgvtIYrNg&s"
+                alt="โลโก้">
+        </div>
+        <h1>เมนู</h1>
+        <a href="above.html" class="back-btn">> RETURN_TEAM</a><br>
+        <a href="../index.html" class="back-btn">> RETURN_HOME</a>
+    </aside>
+
+    <div class="aurora-bg"></div>
+    <div class="card-somying">
+        <img src="https://cdn.rafled.com/anime-icons/images/Lr1OnEFCMLohdoOxTjV1S8ZTGrp0NURO.jpg" alt="สมหญิง">
+        <h1>NEON-SYREN</h1>
+        <p>The Goddess of Neon & Intergalactic Visuals</p>
+        <p>ผู้ออกแบบ UI สำหรับยาน Artemis II และ Interface </p>
+        <a href="above.html" class="back">กลับมิติ Above Team</a>
+    </div>
+</body>
+
+</html>

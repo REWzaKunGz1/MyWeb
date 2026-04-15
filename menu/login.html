@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Skibidi Web</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e1e2f 0%, #4e54c8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            font-family: sans-serif;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .footer-links a {
+            color: #00d2ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card">
+        <h2>SKIBIDI LOGIN</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">SIGN IN</button>
+        </form>
+
+        <div class="footer-links">
+            <p>Don't have an account? <a href="register.html">Create a new account</a></p>
+            <a href="../index.html">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').onsubmit = function (e) {
+            e.preventDefault();
+
+            const userIn = document.getElementById('username').value;
+            const passIn = document.getElementById('password').value;
+
+            // 1. ไปดึงข้อมูลที่ "เคยจดไว้" ตอนสมัครสมาชิกออกมา
+            const savedUser = localStorage.getItem('saved_user');
+            const savedPass = localStorage.getItem('saved_pass');
+
+            // 2. ตรวจสอบเงื่อนไข
+            if (!savedUser) {
+                alert('User not found in the system! Please register first.');
+            } else if (userIn === savedUser && passIn === savedPass) {
+                // ถ้าตรงกัน -> จดบันทึกว่า "ล็อกอินสำเร็จแล้ว"
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('currentUser', userIn);
+
+                alert('Login successful! Welcome back, ' + userIn);
+                window.location.href = '../index.html'; // กลับหน้าหลัก
+            } else {
+                // ถ้าไม่ตรงกัน
+                alert('Invalid username or password. Please try again.');
+            }
+        };
+
+        // ป้องกันถ้าล็อกอินค้างไว้แล้ว ให้เด้งไปหน้าหลักเลย
+        window.onload = function () {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                window.location.href = '../index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
