@@ -14,23 +14,13 @@
 </head>
 
 <div id="preloader">
-    <div class="my-loader">
-        <div class="rubiks-cube">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face right"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
-        </div>
-    </div>
-    <div class="loader-text">...</div>
+    <div class="my-loader"></div>
 </div>
 
-    
 <body>
-
-    <button id="menu-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 1001;">
+    <button id="menu-toggle" style="color: white; position: fixed; top: 10px; left: 10px; z-index: 1001; transition: 0.3s;"
+    onmouseover="this.style.color='yellow'; this.style.transform='scale(1.2)';"
+    onmouseout="this.style.color='white'; this.style.transform='scale(1)';">
         ☰
     </button>
 
@@ -40,53 +30,37 @@
 
         <hr class="rgb-hr">
 
-
         <ul>
             <li><a href="../index.html">Back to Main</a></li>
         </ul>
 
-        <script type="py" src="main.py" config="pyscript.json"></script>
-        <label class="switch">
-
-            <input checked="true" id="checkbox" type="checkbox" onclick="toggleTheme()" />
-
-            <span class="slider">
-                <div class="star star_1"></div>
-                <svg viewBox="0 0 16 16" class="cloud_1 cloud">
-                    <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff"
-                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925">
-                    </path>
-                </svg>
-            </span>
-        </label>
-
-        <div id="authSection"></div>
-
+     <div id="authSection"></div>
+     
     </aside>
 
-        <button onclick="toggleChat()" id="chat-toggle-btn"
-            style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #4466ff; color: white; border: none; cursor: pointer; font-size: 24px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            💬
-        </button>
+    <button onclick="toggleChat()" id="chat-toggle-btn"
+        style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #4466ff; color: white; border: none; cursor: pointer; font-size: 24px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+        💬
+    </button>
 
 
-        <div id="skibidi-chat-box" class="chat-container"
-            style="display: none; position: fixed; bottom: 90px; right: 20px; z-index: 1000; margin: 0;">
-            <div class="chat-header">
-                <h3>💬 Skibidi Global Chat</h3>
-                <button onclick="toggleChat()"
-                    style="background:none; border:none; color:white; cursor:pointer; font-size:20px;">×</button>
-            </div>
-
-            <div id="chat-display" class="chat-display">
-            </div>
-
-            <div class="chat-input-area">
-                <input type="text" id="chat-message" placeholder="พิมพ์ข้อความ..." onkeypress="handleKeyPress(event)">
-                <button onclick="sendToCloud()">ส่ง</button>
-            </div>
+    <div id="skibidi-chat-box" class="chat-container"
+        style="display: none; position: fixed; bottom: 90px; right: 20px; z-index: 1000; margin: 0;">
+        <div class="chat-header">
+            <h3>💬 Skibidi Global Chat</h3>
+            <button onclick="toggleChat()"
+                style="background:none; border:none; color:white; cursor:pointer; font-size:20px;">×</button>
         </div>
+
+        <div id="chat-display" class="chat-display">
         </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-message" placeholder="พิมพ์ข้อความ..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendToCloud()">ส่ง</button>
+        </div>
+    </div>
+    </div>
     <main>
 
         <div class="card" id="snake-game-container">
@@ -142,7 +116,7 @@
                 style="width: 100%; margin-top: 15px; padding: 12px; background: #f43f5e; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold;">
                 START MISSION
             </button>
-            
+
             <img id="shipImage" src="../images/pngegg.png" style="display:none;" crossorigin="anonymous">
             <img id="enemyImage" src="../images/rock.png" style="display:none;" crossorigin="anonymous">
             <audio id="shootSound" src="../effectsound/shoot.mp3" preload="auto" oncanplay="this.volume=0.2"></audio>
@@ -150,9 +124,11 @@
 
     </main>
 
-<script src="../javascripts/mode.js"></script>
-<script src="../javascripts/jv.js"></script>
-<script src="../javascripts/loading.js"></script>
+    <script src="../javascripts/mode.js"></script>
+    <script src="../javascripts/jv.js"></script>
+    <script src="../javascripts/loading.js"></script>
+    <script type="py" src="main.py" config="pyscript.json"></script>
+
 </body>
- 
+
 </html>
